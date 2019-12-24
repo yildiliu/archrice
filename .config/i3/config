@@ -220,4 +220,16 @@ client.urgent           #2f343a #8c644c #888888 #900000
 for_window [class="firefox"] border pixel 2
 
 
+##########
+# Volume #
+##########
+
+bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && pkill -RTMIN+10 i3blocks 
+bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+10 i3blocks
+
+
+
+
+
 # vim:filetype=i3
