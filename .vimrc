@@ -21,6 +21,9 @@ set linebreak
 " für R Markdown
 autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 
+" compiling tex file. First save and then compile.
+autocmd Filetype tex map <F4> :w<bar>!pdflatex %<enter>
+
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
