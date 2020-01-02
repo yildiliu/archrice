@@ -4,6 +4,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'PotatoesMaster/i3-vim-syntax'
 Plug 'ervandew/supertab'
 Plug 'vim-latex/vim-latex'
+" for syntax highlighting in several languages
+Plug 'sheerun/vim-polyglot'
+" intellisense engine  
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 call plug#end()
 
