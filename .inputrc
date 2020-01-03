@@ -1,1 +1,2 @@
 "\C-l":clear-screen
+set colored-stats on
