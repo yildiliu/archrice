@@ -28,7 +28,6 @@ hdd() {
 drive="$(cat /proc/mounts | grep /home | cut -c1-8;)" # get current disk name
 COMMAND="sudo hdparm -B 254 ${drive}"
 
-
 echo "Perform the following command: ${COMMAND}"
 echo -n "Answer 'yes' or 'no': "
 
@@ -85,3 +84,10 @@ set -o vi
 # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1
 
+# set light
+
+function setlight() {
+
+sudo light -S $1
+
+}
