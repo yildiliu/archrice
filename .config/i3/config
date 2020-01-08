@@ -42,7 +42,7 @@ floating_modifier $mod
 bindsym $mod+Return exec st
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run -l 4 -nb black -sb '#8f8456'

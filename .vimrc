@@ -24,7 +24,7 @@ set ruler
 set linebreak
 
 " für R Markdown
-autocmd Filetype rmd map <F5> :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 
 " compiling tex file. First save and then compile.
 autocmd Filetype tex map <F4> :w<bar>!pdflatex %<enter>
@@ -36,4 +36,12 @@ filetype plugin on
 " This enables automatic indentation as you type.
 filetype indent on
 
+" set background color of the popup menu
 
+highlight Pmenu ctermbg=gray guibg=gray
+
+
+" SNIPPETS
+"nnoremap ,rhead :-1read ~/.vim/snippets/header.yaml
+
+command Srhead :-1read ~/.vim/snippets/header.yaml

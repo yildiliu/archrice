@@ -1,6 +1,5 @@
 # ~/.bashrc
 
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 alias ls='ls --color=auto'
@@ -83,11 +82,39 @@ set -o vi
 
 # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1
-
 # set light
 
 function setlight() {
-
 sudo light -S $1
+}
+
+# set volume
+
+function setvolume() {
+amixer set Master $1%
 
 }
+
+# fh - repeat history
+fh() {
+  eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
+}
+
+
+# make a screenshot
+screenshot() {
+
+sleep 1; import -frame screenshot.jpg
+
+}
+
+connecthome() {
+
+sudo wpa_supplicant -B -i wlp36s0b1 -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+}
+
+
+# change history size
+
+HISTSIZE=1000
