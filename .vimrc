@@ -45,3 +45,4 @@ highlight Pmenu ctermbg=gray guibg=gray
 "nnoremap ,rhead :-1read ~/.vim/snippets/header.yaml
 
 command Srhead :-1read ~/.vim/snippets/header.yaml
+
