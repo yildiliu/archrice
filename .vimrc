@@ -29,6 +29,13 @@ autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>rend
 " compiling tex file. First save and then compile.
 autocmd Filetype tex map <F4> :w<bar>!pdflatex %<enter>
 
+" set syntax of tex files 
+augroup latexsyntax 
+  " Remove all vimrc autocommands within scope
+  autocmd! 
+  autocmd BufNewFile,BufRead *.tex   set syntax=tex
+  autocmd BufNewFile,BufRead *.cls   set syntax=tex
+augroup END
 
 " REQUIRED. This makes vim invoke Latex-Suite when you open a tex file.
 filetype plugin on
@@ -45,4 +52,6 @@ highlight Pmenu ctermbg=gray guibg=gray
 "nnoremap ,rhead :-1read ~/.vim/snippets/header.yaml
 
 command Srhead :-1read ~/.vim/snippets/header.yaml
+
+
 
