@@ -23,9 +23,6 @@ syntax on
 set ruler
 set linebreak
 
-" für R Markdown
-autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
-
 " compiling tex file. First save and then compile.
 autocmd Filetype tex map <F4> :w<bar>!pdflatex %<enter>
 
@@ -52,6 +49,11 @@ highlight Pmenu ctermbg=gray guibg=gray
 "nnoremap ,rhead :-1read ~/.vim/snippets/header.yaml
 
 command Srhead :-1read ~/.vim/snippets/header.yaml
+command Scodeblockbash :-1read ~/.vim/snippets/codeblockbash.rmd
 
 
+" rmarkdown
 
+autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+" for automatic formatting of paragraphs
+autocmd BufReadPost,BufNewFile *.rmd,*.tex setlocal textwidth=130

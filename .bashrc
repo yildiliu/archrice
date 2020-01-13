@@ -52,15 +52,25 @@ sleep 1; import -frame screenshot.jpg
 
 # set light
 
+
+
 function setlight() {
-sudo light -S $1
+
+echo "Current brightness: $(light -G)"
+echo -n "New value: "
+read REPLY
+sudo light -S $REPLY
+
 }
 
 
 # set volume
 
 function setvolume() {
-amixer set Master $1%
+echo "Current volume: $(amixer get Master)";
+echo -n "New value: ";
+read REPLY
+amixer set Master $REPLY
 
 }
 
