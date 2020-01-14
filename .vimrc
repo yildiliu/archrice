@@ -50,10 +50,10 @@ highlight Pmenu ctermbg=gray guibg=gray
 
 command Srhead :-1read ~/.vim/snippets/header.yaml
 command Scodeblockbash :-1read ~/.vim/snippets/codeblockbash.rmd
-
+command Srmdstyle :-1read~/.vim/snippets/rmdstyle.css
 
 " rmarkdown
 
 autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 " for automatic formatting of paragraphs
-autocmd BufReadPost,BufNewFile *.rmd,*.tex setlocal textwidth=130
+autocmd BufReadPost,BufNewFile *.rmd,*.tex setlocal textwidth=100
