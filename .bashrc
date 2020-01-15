@@ -18,11 +18,7 @@ set -o vi
 # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1
 
-
-
-#############
-#  Design  #
-#############
+###################### Design  ##################################
 
 # change design of bash prompt
 lightblue='\[\033[1;34m\]'
@@ -31,61 +27,18 @@ darkblue='\[\033[0;34m\]'
 red='\[\033[0;31m\]'
 export PS1="${lightblue}\W ${backtodefault}${darkblue}(${backtodefault}${red}\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)${darkblue})${backtodefault} \$ "
 
-#############
-#  Aliases  #
-#############
+
+
+###################### Aliases  ##################################
 
 alias l="ls -l"
 alias rm="rm -i"
 
-
-#############
-# Functions #
-#############
-
-# make a screenshot
-screenshot() {
-
-sleep 1; import -frame screenshot.jpg
-
-}
-
-# set light
-
-
-
-function setlight() {
-
-echo "Current brightness: $(light -G)"
-echo -n "New value: "
-read REPLY
-sudo light -S $REPLY
-
-}
-
-
-# set volume
-
-function setvolume() {
-echo "Current volume: $(amixer get Master)";
-echo -n "New value: ";
-read REPLY
-amixer set Master $REPLY
-
-}
-
+###################### functions for fzf ##################################
 
 # fh - repeat history
 fh() {
   eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
-}
-
-
-
-connecthome() {
-
-sudo wpa_supplicant -B -i wlp36s0b1 -c /etc/wpa_supplicant/wpa_supplicant.conf
-
 }
 
 # fd - cd to selected directory
@@ -125,6 +78,8 @@ function cdd() {
 }
 
 
+############################ my functions ############################
+
 # temporary function for setting Power Management feature of hdd
 hdd() {
 
@@ -142,3 +97,38 @@ if [[ $REPLY == "y" ]]; then
 fi
 
 }
+
+connecthome() {
+
+sudo wpa_supplicant -B -i wlp36s0b1 -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+}
+
+# set volume
+
+function setvolume() {
+echo "Current volume: $(amixer get Master)";
+echo -n "New value: ";
+read REPLY
+amixer set Master $REPLY
+
+}
+
+# set light
+function setlight() {
+
+echo "Current brightness: $(light -G)"
+echo -n "New value: "
+read REPLY
+sudo light -S $REPLY
+
+}
+
+# make a screenshot
+screenshot() {
+
+sleep 1; import -frame screenshot.jpg
+
+}
+
+#####################################################################
