@@ -48,9 +48,15 @@ highlight Pmenu ctermbg=gray guibg=gray
 " SNIPPETS
 "nnoremap ,rhead :-1read ~/.vim/snippets/header.yaml
 
-command Srhead :-1read ~/.vim/snippets/header.yaml
-command Scodeblockbash :-1read ~/.vim/snippets/codeblockbash.rmd
+command Srmdhead :-1read ~/.vim/snippets/header.yaml
+
+command Srmdcodeblock :-1read ~/.vim/snippets/codeblock.rmd
+
 command Srmdstyle :-1read~/.vim/snippets/rmdstyle.css
+
+command Stexbeamerframe :-1read~/.vim/snippets/texframe.tex
+
+command Stexitemize :-1read~/.vim/snippets/texitemize.tex
 
 " rmarkdown
 

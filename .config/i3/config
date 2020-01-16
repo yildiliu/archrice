@@ -199,7 +199,7 @@ bar {
 }
 
 # no startup prevents loading symbol
-exec_always feh --bg-center ~/bilder/archlinux_logo.png
+exec_always --no-startup-id feh --bg-center ~/bilder/archlinux_logo.png
 
 # only show blue frame
 #for_window [class="^.*"] border pixel 2
