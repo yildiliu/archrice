@@ -10,6 +10,6 @@
 !.tmux.conf 	
 !.vimrc
 !.zshrc
-!.vim/snippets/*
-!scripts/*	
+!.vim/snippets/
+!scripts/
 !.bash_profile

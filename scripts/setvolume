@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+# set volume
+echo "Current volume: $(amixer get Master)";
+echo -n "New value: ";
+read REPLY
+amixer set Master $REPLY
+

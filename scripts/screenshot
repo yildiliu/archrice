@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# make a screenshot
+
+sleep 1; import -frame screenshot.jpg

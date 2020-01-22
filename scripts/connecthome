@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+sudo wpa_supplicant -B -i wlp36s0b1 -c /etc/wpa_supplicant/wpa_supplicant.conf

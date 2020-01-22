@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+# temporary function for setting Power Management feature of hdd
+
+drive="$(cat /proc/mounts | grep /home | cut -c1-8;)" # get current disk name
+COMMAND="sudo hdparm -B 254 ${drive}"
+
+echo "Perform the following command: ${COMMAND}"
+echo -n "Answer 'yes' or 'no': "
+
+read REPLY
+if [[ $REPLY == "y" ]]; then
+     $COMMAND
+ else
+     echo Aborted
+fi
