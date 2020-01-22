@@ -114,21 +114,11 @@ amixer set Master $REPLY
 
 }
 
-# set light
-function setlight() {
-
-echo "Current brightness: $(light -G)"
-echo -n "New value: "
-read REPLY
-sudo light -S $REPLY
-
-}
-
 # make a screenshot
 screenshot() {
-
 sleep 1; import -frame screenshot.jpg
-
 }
+
+
 
 #####################################################################

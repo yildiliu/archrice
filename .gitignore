@@ -12,3 +12,4 @@
 !.zshrc
 !.vim/snippets/*
 !scripts/*	
+!.bash_profile
