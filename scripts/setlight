@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+echo "Current brightness: $(light -G)"
+echo -n "New value: "
+read REPLY
+light -S $REPLY
