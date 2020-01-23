@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 # temporary function for setting Power Management feature of hdd
 
 drive="$(cat /proc/mounts | grep /home | cut -c1-8;)" # get current disk name

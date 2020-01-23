@@ -2,6 +2,8 @@
 
 HISTSIZE=1000
 
+source /home/meyya/scripts/fzffunctions
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 alias ls='ls --color=auto'
@@ -33,49 +35,8 @@ export PS1="${lightblue}\W ${backtodefault}${darkblue}(${backtodefault}${red}\$(
 
 alias l="ls -l"
 alias rm="rm -i"
+alias smount="sudo mount"
+alias sumount="sudo umount"
+alias udiskoff="udisksctl power-off -b"
 
 
-###################### fzf functions  ##################################
-
-
-# fd - cd to selected directory
-function fd() {
-dir=$(find ${1:-.} -path '*/\.*' -prune \
-                -o -type d -print 2> /dev/null | fzf +m) &&
-cd "$dir"
-}
-
-# fda - including hidden directories
-function fda() {
-local dir
-dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
-}
-
-
-# fh - repeat history
-function fh(){
-eval $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed -r 's/ *[0-9]*\*? *//' | sed -r 's/\\/\\\\/g')
-}
-
-# Like normal cd but opens an interactive navigation window when called with no arguments. 
-
-function cdd() {
-    if [[ "$#" != 0 ]]; then
-        builtin cd "$@";
-        return
-    fi
-    while true; do
-        local lsd=$(echo ".." && ls -p | grep '/$' | sed 's;/$;;')
-        local dir="$(printf '%s\n' "${lsd[@]}" |
-            fzf --reverse --preview '
-                __cd_nxt="$(echo {})";
-                __cd_path="$(echo $(pwd)/${__cd_nxt} | sed "s;//;/;")";
-                echo $__cd_path;
-                echo;
-                ls -p --color=always "${__cd_path}";
-        ')"
-        [[ ${#dir} != 0 ]] || return 0
-        builtin cd "$dir" &> /dev/null
-    done
-
-}
