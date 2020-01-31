@@ -3,6 +3,7 @@
 HISTSIZE=1000
 
 source /home/meyya/scripts/fzffunctions
+source /home/meyya/.scripts/pfunctions
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -41,5 +42,11 @@ alias rm="rm -i"
 alias smount="sudo mount"
 alias sumount="sudo umount"
 alias udiskoff="udisksctl power-off -b"
+alias sourceit=". /home/meyya/.bash_profile"
 
+######## calcurse
 
+# privat
+
+alias calcursep="calcurse -D $HOME/calcurse/calcursep"
+alias calcurset="calcurse -D $HOME/calcurse/calcurset"

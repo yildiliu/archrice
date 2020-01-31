@@ -1,9 +1,0 @@
-appearance.calendarview=monthly
-appearance.compactpanels=no
-appearance.defaultpanel=calendar
-appearance.layout=1
-appearance.notifybar=yes
-appearance.sidebarwidth=1
-appearance.theme=red on default
-appearance.todoview=show-completed
-format.outputdate=# %D
