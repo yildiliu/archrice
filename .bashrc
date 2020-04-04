@@ -8,6 +8,7 @@ source /home/meyya/.scripts/pfunctions
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 alias ls='ls --color=auto'
+alias i3lock='i3lock -fi $HOME/.wallpaper/cityscape.png'
 
 
 # load nvm
@@ -43,10 +44,9 @@ alias smount="sudo mount"
 alias sumount="sudo umount"
 alias udiskoff="udisksctl power-off -b"
 alias sourceit=". /home/meyya/.bash_profile"
+alias pwdy="pwd | xclip -selection clipboard"
+alias getip="sudo dhcpcd"
+alias fgrep='cgrep --color=auto'
+alias ports='netstat -tulanp'
 
-######## calcurse
 
-# privat
-
-alias calcursep="calcurse -D $HOME/calcurse/calcursep"
-alias calcurset="calcurse -D $HOME/calcurse/calcurset"

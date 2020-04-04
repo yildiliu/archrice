@@ -201,7 +201,7 @@ bar {
 }
 
 # no startup prevents loading symbol
-exec_always --no-startup-id feh --bg-center ~/bilder/cityscape.png
+exec_always --no-startup-id feh --bg-scale ~/.wallpaper/cityscape.png
 
 # only show blue frame
 #for_window [class="^.*"] border pixel 2
@@ -221,6 +221,7 @@ client.urgent           #2f343a #8c644c #888888 #900000
 #####################
 for_window [class="firefox"] border pixel 2
 for_window [class="Thunderbird"] border pixel 5
+#for_window [class=".*"] floating enable
 
 
 ##########
