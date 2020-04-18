@@ -51,6 +51,9 @@ highlight Pmenu ctermbg=gray guibg=gray
 
 command Srmdhead :-1read ~/.vim/snippets/header.yaml
 
+
+command Srmdpdfhead :-1read ~/.vim/snippets/pdfheader.yaml
+
 command Srmdcodeblock :-1read ~/.vim/snippets/codeblock.rmd
 
 command Srmdstyle :-1read~/.vim/snippets/rmdstyle.css

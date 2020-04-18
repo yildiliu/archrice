@@ -1,7 +1,21 @@
 #!/bin/bash
-# temporary function for setting Power Management feature of hdd
 
-drive="$(blkid | grep "p_arch_swap" | cut -c1-8;)" # get current disk name
+Help()
+{
+cat << EOF
+Name
+
+	hdd - function for setting Power Management feature of the hdd
+EOF
+}
+
+
+if [ "$1" == "-h" ]; then
+  Help
+  exit 0
+fi
+
+drive="$(sudo blkid | grep "p_arch_swap" | cut -c1-8;)" # get current disk name
 COMMAND="sudo hdparm -B 254 ${drive}"
 
 echo "Perform the following command: ${COMMAND}"
