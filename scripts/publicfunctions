@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+source /home/meyya/scripts/fzffunctions
+source /home/meyya/scripts/public_android_ssh

@@ -1,0 +1,99 @@
+#!/usr/bin/env sh
+
+function phonebindportssh() {
+
+Help()
+{
+cat << EOF
+Name
+
+	phonebindportssh - creates a port forward
+
+Description
+
+	The first instance of tcp:8022 is the local port you want to bind the remote port to. 
+	The second one is the port from your Android device. Because Termux' SSHD runs on port 8022 by 
+	default, this is what you want.
+
+EOF
+}
+
+
+if [ "$1" == "-h" ]; then
+  Help
+  return 0
+fi
+
+adb forward tcp:8022 tcp:8022 
+}
+
+function phonessh() {
+Help()
+{
+cat << EOF
+Name
+
+	phonessh - connects to Android device
+EOF
+}
+
+
+if [ "$1" == "-h" ]; then
+  Help
+  return 0
+fi
+ssh $termuxoptions localhost
+}
+
+function phonepullrsync() {
+Help()
+{
+cat << EOF
+Name
+
+	phonepullrsync - as the name indicates
+Syntax
+	phonepullrsync	<locationonphone> <destinationonlaptop>
+
+EOF
+}
+
+
+if [ "$1" == "-h" ]; then
+  Help
+  return 0
+fi
+# -z compress file data
+# -r recursive
+# -v verbose
+# -e specify the remote shell to use
+rsync --progress -rvze "ssh $termuxoptions" localhost:$1 $2
+}
+
+function phonepushrsync() {
+Help()
+{
+cat << EOF
+Name
+
+	phonepushrsync - as the name indicates
+Syntax
+	phonepushrsync <locationonlaptop> <destinationonphone> 
+
+EOF
+}
+
+
+if [ "$1" == "-h" ]; then
+  Help
+  return 0
+fi
+rsync --progress -re "ssh $termuxoptions" $1 localhost:$2
+}
+
+function testfunction()
+{
+
+echo $termuxoptions
+
+}

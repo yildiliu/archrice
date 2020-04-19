@@ -2,8 +2,8 @@
 
 HISTSIZE=1000
 
-source /home/meyya/scripts/fzffunctions
-source /home/meyya/.scripts/pfunctions
+source /home/meyya/scripts/publicfunctions
+source /home/meyya/.scripts/privatefunctions
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
