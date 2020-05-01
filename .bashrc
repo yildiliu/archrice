@@ -47,5 +47,7 @@ alias pwdy="pwd | xclip -selection clipboard"
 alias getip="sudo dhcpcd"
 alias fgrep='cgrep --color=auto'
 alias ports='netstat -tulanp'
+alias ccc='cd ..'
+
 
 

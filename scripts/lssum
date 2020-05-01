@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+
+Help()
+{
+cat << EOF
+Name
+
+	lssum - sum up the size of files listed
+EOF
+}
+
+
+sum() {
+ls -lrt | awk '{ total += $5 }; END { print total }'
+}
+
+
+if [ "$1" == "-h" ]; then
+  Help
+  exit 0
+fi
+
+result="$(sum)"
+numfmt --to si --format "%8.4f" $result

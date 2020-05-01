@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+function tmuxkill() {
+
+tmux kill-session -t $1
+
+}
+
+function tmuxattach() {
+
+tmux attach-session -t $1
+
+}

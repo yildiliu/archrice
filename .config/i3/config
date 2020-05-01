@@ -198,6 +198,7 @@ bar {
         inactive_workspace #141414 #141414 #444444
         urgent_workspace   #141414 #141414 #8c644c
     }
+
 }
 
 # no startup prevents loading symbol

@@ -1,0 +1,74 @@
+#!/usr/bin/env sh
+
+alias mtpfs_show='simple-mtpfs -l'
+
+function mtpfs_mount() {
+
+Help()
+{
+cat << EOF
+
+Syntax
+
+mtpfs_mount <devid> <mountpoint>
+
+EOF
+}
+
+
+if [ "$1" == "-h" ]; then
+  Help
+  return 0
+fi
+
+simple-mtpfs --device $1 $2
+
+}
+
+function mtpfs_umount() {
+
+Help()
+{
+cat << EOF
+
+Syntax
+
+mtpfs_umount <mountpoint>
+
+EOF
+}
+
+
+if [ "$1" == "-h" ]; then
+  Help
+  return 0
+fi
+
+fusermount -u $1
+
+}
+
+function mtpfs_rsync() {
+
+Help()
+{
+cat << EOF
+
+Syntax
+
+mtpfs_rsync <source> <dest>
+
+EOF
+}
+
+
+if [ "$1" == "-h" ]; then
+  Help
+  return 0
+fi
+
+rsync --verbose --progress --omit-dir-times --no-perms --recursive --inplace $1 $2
+
+}
+
+

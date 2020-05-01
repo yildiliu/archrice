@@ -8,12 +8,12 @@ Plug 'vim-latex/vim-latex'
 Plug 'sheerun/vim-polyglot'
 " intellisense engine  
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+" for rmarkdown
 
 call plug#end()
 
 "enable autocompletion
-	set wildmode=longest,list,full
+set wildmode=longest,list,full
 
 set number
 "key mapping switch between number and relative number
@@ -51,7 +51,6 @@ highlight Pmenu ctermbg=gray guibg=gray
 
 command Srmdhead :-1read ~/.vim/snippets/header.yaml
 
-
 command Srmdpdfhead :-1read ~/.vim/snippets/pdfheader.yaml
 
 command Srmdcodeblock :-1read ~/.vim/snippets/codeblock.rmd
@@ -67,3 +66,12 @@ command Stexitemize :-1read~/.vim/snippets/texitemize.tex
 autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 " for automatic formatting of paragraphs
 autocmd BufReadPost,BufNewFile *.rmd,*.tex setlocal textwidth=100
+
+" to save text folding
+
+"autocmd BufWinLeave *.* mkview 
+"autocmd BufWinEnter *.* silent loadview  
+"
+
+" Save file as sudo on files that require root permission
+ cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
