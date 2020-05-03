@@ -48,6 +48,8 @@ alias getip="sudo dhcpcd"
 alias fgrep='cgrep --color=auto'
 alias ports='netstat -tulanp'
 alias ccc='cd ..'
+alias v='vim'
+alias declarus='declare -f' # get definition of function
 
 
 
