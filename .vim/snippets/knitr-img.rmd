@@ -1,0 +1,3 @@
+```{r echo=FALSE, fig.cap="", out.width = '<++>', fig.pos="h", fig.align="center"}
+knitr::include_graphics("<++>")
+```

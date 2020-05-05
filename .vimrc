@@ -61,6 +61,8 @@ command Stexbeamerframe :-1read~/.vim/snippets/texframe.tex
 
 command Stexitemize :-1read~/.vim/snippets/texitemize.tex
 
+command Srmdknitrimg :-1read ~/.vim/snippets/knitr-img.rmd
+
 " rmarkdown
 
 autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
