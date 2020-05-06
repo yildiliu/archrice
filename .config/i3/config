@@ -9,8 +9,17 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+
+# #---Basic Definitions---# #
+set $inner_gaps 4
+set $outer_gaps 4
 # See xmodmap
 set $mod Mod4
+
+# #---Gaps---# #
+for_window [class="^.*"] border pixel 2
+gaps inner $inner_gaps
+gaps outer $outer_gaps
 
 
 # Window borders (normal|pixel|1pixel|none)
@@ -74,8 +83,12 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+
+bindsym $mod+m gaps inner current plus 5
+bindsym $mod+Shift+m gaps inner current minus 5
+
 # split in horizontal orientation
-#bindsym $mod+h split h
+# bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
