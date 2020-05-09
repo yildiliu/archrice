@@ -136,15 +136,17 @@ bar {
   	status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
 
   colors {
+
         background #141414
         statusline #ffffff
         separator  #666666
 
         # Colors           border  backgr. text
-        focused_workspace  #141414 #141414 #8f8456
+        focused_workspace  #141414 #141414 #8A1A1A
         active_workspace   #141414 #141414 #746C48
         inactive_workspace #141414 #141414 #444444
         urgent_workspace   #141414 #141414 #8c644c
+
     }
 
 }
@@ -160,19 +162,15 @@ exec_always --no-startup-id feh --bg-scale ~/.wallpaper/cityscape.png
 #################
 
 # Window colors         border  backgr. text    indicator
-client.focused          #222323 #444444 #888888 #444444
-client.focused_inactive #222323 #222323 #888888 #484e50
-client.unfocused        #222323 #222323 #888888 #292d2e
-client.urgent           #2f343a #8c644c #888888 #900000
+client.focused          #222323 #651919 #888888 #651919
+client.focused_inactive #222323 #222323 #888888 #222323
+client.unfocused        #222323 #222323 #888888 #222323
+client.urgent           #2f343a #8c644c #888888 #8c644c
 
 #####################
 # Application rules #
 #####################
-for_window [class="firefox"] border pixel 2
 for_window [class="Thunderbird"] border pixel 5
-
-# for_window [class=".*"] floating enable
-
 
 # ----- Volume ----- #
 
@@ -204,7 +202,7 @@ bindsym $mod+Shift+c reload
 # bindsym $mod+d focus child
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -l 4 -nb black -sb '#8f8456'
+bindsym $mod+d exec dmenu_run -l 4 -nb black -sb '#8A1A1A'
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+e layout toggle split
