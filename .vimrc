@@ -69,11 +69,33 @@ autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>rend
 " for automatic formatting of paragraphs
 autocmd BufReadPost,BufNewFile *.rmd,*.tex setlocal textwidth=100
 
-" to save text folding
-
-"autocmd BufWinLeave *.* mkview 
-"autocmd BufWinEnter *.* silent loadview  
-"
-
 " Save file as sudo on files that require root permission
  cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+
+" rmarkdown folding
+
+function! MarkdownLevel()
+    if getline(v:lnum) =~ '^# .*$'
+        return ">1"
+    endif
+    if getline(v:lnum) =~ '^## .*$'
+        return ">2"
+    endif
+    if getline(v:lnum) =~ '^### .*$'
+        return ">3"
+    endif
+    if getline(v:lnum) =~ '^#### .*$'
+        return ">4"
+    endif
+    if getline(v:lnum) =~ '^##### .*$'
+        return ">5"
+    endif
+    if getline(v:lnum) =~ '^###### .*$'
+        return ">6"
+    endif
+    return "=" 
+endfunction
+
+au BufEnter *.rmd setlocal foldexpr=MarkdownLevel()  
+au BufEnter *.rmd setlocal foldmethod=expr     
