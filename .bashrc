@@ -45,8 +45,10 @@ alias udiskoff="udisksctl power-off -b"
 alias sourceit=". /home/meyya/.bash_profile"
 alias pwdy="pwd | xclip -selection clipboard"
 alias getip="sudo dhcpcd"
+alias gx='sudo dhcpcd -x'
 alias fgrep='cgrep --color=auto'
 alias ports='netstat -tulanp'
 alias ccc='cd ..'
 alias v='vim'
 alias declarus='declare -f' # get definition of function
+

@@ -1,3 +1,5 @@
+let mapleader=','
+
 call plug#begin('~/.vim/plugged')
 
 "for i3 syntax highlighting
@@ -8,7 +10,7 @@ Plug 'vim-latex/vim-latex'
 Plug 'sheerun/vim-polyglot'
 " intellisense engine  
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" for rmarkdown
+Plug 'dhruvasagar/vim-table-mode'
 
 call plug#end()
 
@@ -70,7 +72,7 @@ autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>rend
 autocmd BufReadPost,BufNewFile *.rmd,*.tex setlocal textwidth=100
 
 " Save file as sudo on files that require root permission
- cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+" cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 
 " rmarkdown folding
@@ -99,3 +101,8 @@ endfunction
 
 au BufEnter *.rmd setlocal foldexpr=MarkdownLevel()  
 au BufEnter *.rmd setlocal foldmethod=expr     
+" Change the colour of the folded line
+highlight Folded ctermbg=black
+
+" for Markdown-compatible tables with table-mode plugin
+let g:table_mode_corner='|'
