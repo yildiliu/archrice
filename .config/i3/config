@@ -202,7 +202,7 @@ bindsym $mod+Shift+c reload
 # bindsym $mod+d focus child
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -l 4 -nb black -sb '#8A1A1A'
+bindsym $mod+d exec dmenu_run
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+e layout toggle split

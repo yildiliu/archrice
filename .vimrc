@@ -11,6 +11,7 @@ Plug 'sheerun/vim-polyglot'
 " intellisense engine  
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dhruvasagar/vim-table-mode'
+Plug 'jamessan/vim-gnupg'
 
 call plug#end()
 

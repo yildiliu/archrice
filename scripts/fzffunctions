@@ -13,6 +13,13 @@ local dir
 dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
+# fcu - select one of the much used commands
+
+function fcu() {
+	
+cat ~/.current_use | fzf +s | sed -e 's/^/# /' | tr '\n' ' ' | xclip -selection clipboard
+
+}
 
 # fh - repeat history
 function fh(){

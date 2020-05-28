@@ -51,4 +51,5 @@ alias ports='netstat -tulanp'
 alias ccc='cd ..'
 alias v='vim'
 alias declarus='declare -f' # get definition of function
-
+alias lsblk='lsblk -o name,label,size,type,mountpoint,fstype'
+alias gpg2='gpg'
