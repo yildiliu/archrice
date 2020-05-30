@@ -107,3 +107,6 @@ highlight Folded ctermbg=black
 
 " for Markdown-compatible tables with table-mode plugin
 let g:table_mode_corner='|'
+
+" update binds when sxhkdrc is updated
+autocmd BufWritePost *sxhkdrc !killall sxhkd; setsid sxhkd &
