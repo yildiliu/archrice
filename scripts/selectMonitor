@@ -65,5 +65,5 @@ fi
 $befehl
 
 
-# Hintergrund wieder setzen
-~/.fehbg
+# set background again
+$HOME/.xwall

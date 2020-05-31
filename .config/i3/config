@@ -152,7 +152,7 @@ bar {
 }
 
 # no startup prevents loading symbol
-exec_always --no-startup-id feh --bg-scale ~/.wallpaper/cityscape.png
+# exec_always --no-startup-id feh --bg-scale ~/.wallpaper/cityscape.png
 
 # only show blue frame
 #for_window [class="^.*"] border pixel 2
@@ -286,11 +286,6 @@ bindsym $mod+w layout tabbed
 
 bindsym $mod+z 	gaps outer current plus 5
 bindsym $mod+Shift+z gaps outer current minus 5
-
-
-
-
-
 
 
 # vim:filetype=i3

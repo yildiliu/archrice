@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 source /home/meyya/scripts/fzffunctions
-source /home/meyya/scripts/public_android_ssh
+source /home/meyya/scripts/android_ssh
 source /home/meyya/scripts/tmux_aliases
 source /home/meyya/scripts/mtpfs_commands
 

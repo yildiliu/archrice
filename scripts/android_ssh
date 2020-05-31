@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 function phonebindportssh() {
 
@@ -42,7 +42,7 @@ if [ "$1" == "-h" ]; then
   Help
   return 0
 fi
-ssh $termuxoptions localhost
+ssh myphone
 }
 
 function phonepullrsync() {
@@ -66,8 +66,7 @@ fi
 # -z compress file data
 # -r recursive
 # -v verbose
-# -e specify the remote shell to use
-rsync --progress -rvze "ssh $termuxoptions" localhost:$1 $2
+rsync --progress -rvz myphone:$1 $2
 }
 
 function phonepushrsync() {
@@ -88,12 +87,15 @@ if [ "$1" == "-h" ]; then
   Help
   return 0
 fi
-rsync --progress -re "ssh $termuxoptions" $1 localhost:$2
+rsync --progress -r $1 myphone:$2
 }
 
-function testfunction()
-{
 
-echo $termuxoptions
+function phonepullscp() {
+scp -r myphone:$1 $2
+}
 
+
+function phonepushscp() {
+scp -r $1 myphone:$2
 }
