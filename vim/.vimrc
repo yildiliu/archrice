@@ -66,11 +66,18 @@ command Stexitemize :-1read~/.vim/snippets/texitemize.tex
 
 command Srmdknitrimg :-1read ~/.vim/snippets/knitr-img.rmd
 
+command Srmdcomment :-1read ~/.vim/snippets/comment.rmd
+
 " rmarkdown
 
 autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 " for automatic formatting of paragraphs
 autocmd BufReadPost,BufNewFile *.rmd,*.tex setlocal textwidth=100
+
+
+" add comment snippet 
+autocmd Filetype rmd nnoremap <silent> ,c :Srmdcomment<CR>
+
 
 " Save file as sudo on files that require root permission
 " cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
@@ -110,3 +117,4 @@ let g:table_mode_corner='|'
 
 " update binds when sxhkdrc is updated
 autocmd BufWritePost *sxhkdrc !killall sxhkd; setsid sxhkd &
+

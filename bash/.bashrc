@@ -5,10 +5,12 @@ HISTSIZE=1000
 source /home/meyya/scripts/publicfunctions
 source /home/meyya/.scripts/privatefunctions
 
+# bind -m vi-insert "\C-l":clear-screen
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 alias ls='ls --color=auto'
-alias i3lock='i3lock -fi $HOME/.wallpaper/cityscape.png'
+alias i3lock='i3lock -fi $HOME/EXTERNILUX/wallpaper/starscape.png'
 
 
 # load nvm
@@ -53,3 +55,4 @@ alias v='vim'
 alias declarus='declare -f' # get definition of function
 alias lsblk='lsblk -o name,label,size,type,mountpoint,fstype'
 alias gpg2='gpg'
+alias xournal='xournalpp'

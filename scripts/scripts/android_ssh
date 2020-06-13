@@ -33,7 +33,7 @@ Help()
 cat << EOF
 Name
 
-	phonessh - connects to Android device
+	phonessh - connect to Android device
 EOF
 }
 
@@ -63,10 +63,9 @@ if [ "$1" == "-h" ]; then
   Help
   return 0
 fi
-# -z compress file data
 # -r recursive
 # -v verbose
-rsync --progress -rvz myphone:$1 $2
+rsync --progress -rv myphone:$1 $2
 }
 
 function phonepushrsync() {
