@@ -12,6 +12,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'jamessan/vim-gnupg'
+Plug 'vim-pandoc/vim-rmarkdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
 
@@ -83,32 +86,7 @@ autocmd Filetype rmd nnoremap <silent> ,c :Srmdcomment<CR>
 " cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 
-" rmarkdown folding
 
-function! MarkdownLevel()
-    if getline(v:lnum) =~ '^# .*$'
-        return ">1"
-    endif
-    if getline(v:lnum) =~ '^## .*$'
-        return ">2"
-    endif
-    if getline(v:lnum) =~ '^### .*$'
-        return ">3"
-    endif
-    if getline(v:lnum) =~ '^#### .*$'
-        return ">4"
-    endif
-    if getline(v:lnum) =~ '^##### .*$'
-        return ">5"
-    endif
-    if getline(v:lnum) =~ '^###### .*$'
-        return ">6"
-    endif
-    return "=" 
-endfunction
-
-au BufEnter *.rmd setlocal foldexpr=MarkdownLevel()  
-au BufEnter *.rmd setlocal foldmethod=expr     
 " Change the colour of the folded line
 highlight Folded ctermbg=black
 
@@ -118,3 +96,17 @@ let g:table_mode_corner='|'
 " update binds when sxhkdrc is updated
 autocmd BufWritePost *sxhkdrc !killall sxhkd; setsid sxhkd &
 
+
+" vim-pandoc-syntax
+"
+" solves the issue of some words being completly obscured (in my dark-theme
+" terminal)
+let g:pandoc#modules#disabled = ["spell"]
+
+let g:pandoc#syntax#conceal#use = 0
+
+let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "c"]
+let g:pandoc#syntax#codeblocks#embeds#use = 1
+
+" foldcolumn with a width of 0
+let g:pandoc#folding#fdc = 0
