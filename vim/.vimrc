@@ -110,3 +110,7 @@ let g:pandoc#syntax#codeblocks#embeds#use = 1
 
 " foldcolumn with a width of 0
 let g:pandoc#folding#fdc = 0
+
+" Toggle auto-indenting for code paste
+set pastetoggle=<F2>
+
