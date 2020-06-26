@@ -1,6 +1,12 @@
 # ~/.bashrc
 
+shopt -s cdable_vars
+
 HISTSIZE=1000
+
+# plug in keys for nnn
+
+export NNN_PLUG='p:preview-tui;'
 
 source $HOME/scripts/publicfunctions
 source $HOME/.scripts/privatefunctions

@@ -102,9 +102,7 @@ autocmd BufWritePost *sxhkdrc !killall sxhkd; setsid sxhkd &
 " solves the issue of some words being completly obscured (in my dark-theme
 " terminal)
 let g:pandoc#modules#disabled = ["spell"]
-
 let g:pandoc#syntax#conceal#use = 0
-
 let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "c"]
 let g:pandoc#syntax#codeblocks#embeds#use = 1
 
