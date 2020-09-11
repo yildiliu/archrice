@@ -1,2 +1,7 @@
 "\C-l":clear-screen
 set colored-stats on
+
+# cycle forward
+Control-k: menu-complete
+# cycle backward
+Control-j: menu-complete-backward

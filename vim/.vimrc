@@ -1,4 +1,4 @@
-let mapleader=','
+let mapleader='<space>'
 
 call plug#begin('~/.vim/plugged')
 
@@ -15,6 +15,7 @@ Plug 'jamessan/vim-gnupg'
 Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
@@ -22,8 +23,11 @@ call plug#end()
 set wildmode=longest,list,full
 
 set number
-"key mapping switch between number and relative number
-nnoremap <F3> :set relativenumber!<CR>
+
+" save
+nnoremap <space>w :w<CR>
+" exit
+nnoremap <space>q :q<CR>
 
 syntax on
 set ruler

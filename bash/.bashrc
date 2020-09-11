@@ -5,8 +5,10 @@ shopt -s cdable_vars
 HISTSIZE=1000
 
 # plug in keys for nnn
+export NNN_PLUG='p:preview-tui;c:cwd'
+# path of a named pipe to write the hovered file path
+export NNN_FIFO='/tmp/nnn.fifo'
 
-export NNN_PLUG='p:preview-tui;'
 
 source $HOME/scripts/publicfunctions
 source $HOME/.scripts/privatefunctions
@@ -41,9 +43,35 @@ export PS1="${lightblue}\W ${backtodefault}${darkblue}(${backtodefault}${red}\$(
 
 
 
+###################### Tab and History  ##################################
+
+# If there are multiple matches for completion, Tab should cycle through them
+
+bind 'TAB':menu-complete
+
+# Display a list of the matching files
+
+bind "set show-all-if-ambiguous on"
+
+# Perform partial completion on the first Tab press,
+# only start cycling full results on the second Tab press
+
+bind "set menu-complete-display-prefix on"
+
+# Cycle through history based on characters already typed on the line
+
+bind '"\e[A":history-search-backward'
+bind '"\e[B":history-search-forward'
+
+bind 'set completion-display-width 0'
+bind 'set colored-completion-prefix'
+
 ###################### Aliases  ##################################
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+
+
 
