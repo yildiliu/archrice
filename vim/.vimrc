@@ -15,6 +15,7 @@ Plug 'jamessan/vim-gnupg'
 Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'preservim/nerdtree'
 " Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
@@ -115,4 +116,5 @@ let g:pandoc#folding#fdc = 0
 
 " Toggle auto-indenting for code paste
 set pastetoggle=<F2>
+nmap <C-n> :NERDTreeToggle<CR>
 
