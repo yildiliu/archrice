@@ -23,3 +23,4 @@ alias sx='startx'
 alias screenshot='flameshot gui -p $(pwd)'
 alias currentdu='gt5 --with-mounts /'
 alias packagestobeupdated="pacman -Qu"
+alias txa="tmux_attach"
