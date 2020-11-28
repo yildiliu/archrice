@@ -20,4 +20,6 @@ alias i3lock='i3lock -fc 000000'
 alias vcu='vim $HOME/.current_use'
 alias c='cd'
 alias sx='startx'
-alias screenshot='flameshot gui -p .'
+alias screenshot='flameshot gui -p $(pwd)'
+alias currentdu='gt5 --with-mounts /'
+alias packagestobeupdated="pacman -Qu"

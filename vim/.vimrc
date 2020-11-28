@@ -1,5 +1,5 @@
 let mapleader='<space>'
-
+set background=dark
 call plug#begin('~/.vim/plugged')
 
 "for i3 syntax highlighting
@@ -16,6 +16,7 @@ Plug 'vim-pandoc/vim-rmarkdown'
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'preservim/nerdtree'
+Plug 'thaerkh/vim-indentguides'
 " Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
@@ -79,6 +80,7 @@ command Srmdcomment :-1read ~/.vim/snippets/comment.rmd
 " rmarkdown
 
 autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+
 " for automatic formatting of paragraphs
 autocmd BufReadPost,BufNewFile *.rmd,*.tex setlocal textwidth=100
 
@@ -90,8 +92,6 @@ autocmd Filetype rmd nnoremap <silent> ,c :Srmdcomment<CR>
 " Save file as sudo on files that require root permission
 " cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-
-
 " Change the colour of the folded line
 highlight Folded ctermbg=black
 
@@ -100,7 +100,6 @@ let g:table_mode_corner='|'
 
 " update binds when sxhkdrc is updated
 autocmd BufWritePost *sxhkdrc !killall sxhkd; setsid sxhkd &
-
 
 " vim-pandoc-syntax
 "
@@ -117,4 +116,6 @@ let g:pandoc#folding#fdc = 0
 " Toggle auto-indenting for code paste
 set pastetoggle=<F2>
 nmap <C-n> :NERDTreeToggle<CR>
+
+
 
