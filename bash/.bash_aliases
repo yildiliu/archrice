@@ -7,6 +7,7 @@ alias sourceit=". /home/meyya/.bash_profile"
 alias pwdy="pwd | xclip -selection clipboard"
 alias getip="sudo dhcpcd"
 alias gx='sudo dhcpcd -x'
+alias killconnection="gx; sudo killall wpa_supplicant"
 alias fgrep='fgrep --color=auto'
 alias ports='netstat -tulanp'
 alias ccc='cd ..'
@@ -24,3 +25,4 @@ alias screenshot='flameshot gui -p $(pwd)'
 alias currentdu='gt5 --with-mounts /'
 alias packagestobeupdated="pacman -Qu"
 alias txa="tmux_attach"
+alias mountfs="sudo mount -t ntfs-3g -o uid=1000,gid=985,dmask=022,fmask=133"
