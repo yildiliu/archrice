@@ -5,3 +5,16 @@ source /home/meyya/scripts/android_ssh
 source /home/meyya/scripts/tmux_aliases
 source /home/meyya/scripts/mtpfs_commands
 
+
+function deleterecursive() {
+
+find . -name "*.$1" -type f
+
+read -p "Are you sure? " -n 1 -r
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+				echo 
+				echo "find . -name "*.$1" -type f -delete"
+fi
+}
+
