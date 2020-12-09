@@ -11,7 +11,7 @@ alias killconnection="gx; sudo killall wpa_supplicant"
 alias fgrep='fgrep --color=auto'
 alias ports='netstat -tulanp'
 alias ccc='cd ..'
-alias v='vim'
+alias v='nvim'
 alias declarus='declare -f' # get definition of function
 alias lsblk='lsblk -o name,label,size,type,mountpoint,fstype'
 alias gpg2='gpg'

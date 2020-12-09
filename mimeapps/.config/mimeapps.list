@@ -1,5 +1,15 @@
 [Default Applications]
-application/pdf=org.pwmt.zathura.desktop
 inode/directory=nemo.desktop
 x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
+text/plain=vim.desktop
+text/x-java=gvim.desktop
+application/pdf=org.gnome.Evince.desktop
+video/mp4=vlc.desktop
+video/=vlc.desktop
+application/xml=structorizer.desktop
+video/webm=vlc.desktop
+
+[Added Associations]
+text/plain=gvim.desktop;code-oss.desktop;
+application/pdf=org.gnome.Evince.desktop;

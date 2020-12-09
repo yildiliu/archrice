@@ -15,8 +15,6 @@ export NNN_PLUG='p:preview-tui;c:cwd'
 export NNN_FIFO='/tmp/nnn.fifo'
 
 
-source $HOME/scripts/publicfunctions
-source $HOME/.scripts/privatefunctions
 
 # bind -m vi-insert "\C-l":clear-screen
 
@@ -34,8 +32,8 @@ set -o vi
 
 # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 ###################### Design  ##################################
 
@@ -46,8 +44,9 @@ darkblue='\[\033[0;34m\]'
 red='\[\033[0;31m\]'
 export PS1="${lightblue}\W ${backtodefault}${darkblue}(${backtodefault}${red}\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)${darkblue})${backtodefault} \$ "
 
-
-
+###################### functions ##################################
+source $HOME/scripts/publicfunctions
+source $HOME/.scripts/privatefunctions
 ###################### Tab and History  ##################################
 
 # If there are multiple matches for completion, Tab should cycle through them
