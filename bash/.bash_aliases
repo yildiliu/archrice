@@ -26,3 +26,6 @@ alias currentdu='gt5 --with-mounts /'
 alias packagestobeupdated="pacman -Qu"
 alias txa="tmux_attach"
 alias mountfs="sudo mount -t ntfs-3g -o uid=1000,gid=985,dmask=022,fmask=133"
+alias start-ssh-agent='eval "$(ssh-agent -s)"'
+alias kill-ssh-agent='eval "$(ssh-agent -k)"'
+
