@@ -2,7 +2,6 @@
 
 source /home/meyya/scripts/my_fzffunctions
 source /home/meyya/scripts/my_android_ssh
-source /home/meyya/scripts/my_tmux_aliases
 source /home/meyya/scripts/my_mtpfs_commands
 source /home/meyya/scripts/my_network
 source /home/meyya/scripts/my_mixed

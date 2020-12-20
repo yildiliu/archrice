@@ -50,9 +50,28 @@ sudo ufw logging off
 
 }
 
+function my_ufw-logging-low() {
+
+sudo ufw logging low
+
+}
+
 function my_ufw-dmesg() {
 
 dmesg -T --color=always | grep UFW --color=always
+
+}
+
+
+function my_ufw-disable() {
+
+sudo ufw disable
+
+}
+
+function my_ufw-enable() {
+
+sudo ufw enable
 
 }
 
