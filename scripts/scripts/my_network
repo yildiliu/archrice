@@ -1,0 +1,59 @@
+#!/bin/bash
+
+function bring-interface-down() {
+
+  sudo ip link set dev $1 down 
+
+}
+
+function bring-interface-up() {
+
+  sudo ip link set dev $1 up 
+
+}
+
+function my_show-used-dns() {
+
+cat /etc/resolv.conf
+
+}
+
+function my_make-resolv-immutable() {
+
+sudo chattr +i /etc/resolv.conf
+
+}
+
+function my_make-reslv-mutable() {
+
+sudo chattr -i /etc/resolv.conf
+
+}
+
+function my_ufw-view-rules(){
+
+sudo ufw status numbered
+
+}
+
+function my_ufw-delete-rule() {
+
+# $1: number
+
+sudo ufw delete $1
+
+}
+
+function my_ufw-logging-off() {
+
+sudo ufw logging off
+
+}
+
+function my_ufw-dmesg() {
+
+dmesg -T --color=always | grep UFW --color=always
+
+}
+
+

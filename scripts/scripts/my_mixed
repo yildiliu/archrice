@@ -1,0 +1,7 @@
+#!/bin/bash
+
+alias my_logs-verify="journalctl --verify"
+
+alias my_logs-clear="sudo journalctl --vacuum-size=120M"
+
+alias my_logs-usage="journalctl --disk-usage"

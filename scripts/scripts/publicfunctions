@@ -1,9 +1,11 @@
 #!/usr/bin/env sh
 
-source /home/meyya/scripts/fzffunctions
-source /home/meyya/scripts/android_ssh
-source /home/meyya/scripts/tmux_aliases
-source /home/meyya/scripts/mtpfs_commands
+source /home/meyya/scripts/my_fzffunctions
+source /home/meyya/scripts/my_android_ssh
+source /home/meyya/scripts/my_tmux_aliases
+source /home/meyya/scripts/my_mtpfs_commands
+source /home/meyya/scripts/my_network
+source /home/meyya/scripts/my_mixed
 
 
 function deleterecursive() {
@@ -16,5 +18,11 @@ then
 				echo 
 				echo "find . -name "*.$1" -type f -delete"
 fi
+}
+
+function disable-dev-powersave() {
+
+sudo iw dev $1 set power_save off
+
 }
 

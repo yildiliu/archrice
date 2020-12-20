@@ -7,7 +7,7 @@ alias sourceit=". /home/meyya/.bash_profile"
 alias pwdy="pwd | xclip -selection clipboard"
 alias getip="sudo dhcpcd"
 alias gx='sudo dhcpcd -x'
-alias killconnection="gx; sudo killall wpa_supplicant"
+alias killconnection="sudo killall wpa_supplicant"
 alias fgrep='fgrep --color=auto'
 alias ports='netstat -tulanp'
 alias ccc='cd ..'
@@ -28,4 +28,17 @@ alias txa="tmux_attach"
 alias mountfs="sudo mount -t ntfs-3g -o uid=1000,gid=985,dmask=022,fmask=133"
 alias start-ssh-agent='eval "$(ssh-agent -s)"'
 alias kill-ssh-agent='eval "$(ssh-agent -k)"'
+alias grep="grep --color"
+alias showallmodules="find /lib/modules/$(uname -r) -type f -name '*.ko*'"
+alias my_hdd-spindown-in5sec="hdparm -S 1"
+alias dmesg-lean='dmesg -T --color=always | grep -v UFW --color=always'
+alias dmesg="dmesg -T"
+
+# git 
+alias gitlog1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+alias gitlog2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''        %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
+
+# network
+
+alias netstat-listen="sudo netstat -ntpul" # view services in a "LISTEN" state.
 
