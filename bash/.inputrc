@@ -5,3 +5,9 @@ set colored-stats on
 Control-k: menu-complete
 # cycle backward
 Control-j: menu-complete-backward
+
+# bind alt + e
+"\ee":"my_"
+
+
+

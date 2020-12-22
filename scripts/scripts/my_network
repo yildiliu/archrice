@@ -30,7 +30,13 @@ sudo chattr -i /etc/resolv.conf
 
 }
 
-function my_ufw-view-rules(){
+function my_ufw-status-verbose(){
+
+sudo ufw status verbose
+
+}
+
+function my_ufw-status-numbered(){
 
 sudo ufw status numbered
 
@@ -73,6 +79,19 @@ function my_ufw-enable() {
 
 sudo ufw enable
 
+}
+
+
+function my_arpscan-show-devices-lan() {
+
+sudo arp-scan --interface=wlp36s0b1 --localnet
+
+}
+
+function my_nmap-scan-dev-for-open-ports() {
+# -sT:  scan for TCP ports 
+# -p-:   scan for all 65535 ports
+sudo nmap --stats-every 10s -sT -p- $1
 }
 
 

@@ -36,7 +36,7 @@ alias grep="grep --color"
 
 alias my_kernel-show-all-available-modules="find /lib/modules/$(uname -r) -type f -name '*.ko*'"
 
-alias my_hdparm-spindown-in5sec="hdparm -S 1"
+alias my_hdparm-spindown-in5sec="sudo hdparm -S 1"
 
 alias my_dmesg-lean='dmesg -T --color=always | grep -v UFW --color=always'
 alias my_dmesg="dmesg -T"
