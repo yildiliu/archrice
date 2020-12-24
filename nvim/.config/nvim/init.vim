@@ -118,4 +118,5 @@ set pastetoggle=<F2>
 nmap <C-n> :NERDTreeToggle<CR>
 
 
-
+" To prevent conceal in LaTeX files
+let g:tex_conceal = ''

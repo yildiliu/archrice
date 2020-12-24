@@ -19,9 +19,11 @@ then
 fi
 }
 
-function disable-dev-powersave() {
+function my_iw-disable-powersave-option-of-interface() {
 
 sudo iw dev $1 set power_save off
 
 }
 
+
+alias my_youtubedl-download-mp3="youtube-dl --extract-audio --audio-format mp3"

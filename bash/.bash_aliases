@@ -10,6 +10,7 @@ alias my_dhcpcd-end='sudo dhcpcd -x'
 alias my_wpasupplicant-end="sudo killall wpa_supplicant"
 alias fgrep='fgrep --color=auto'
 alias v='nvim'
+alias vim='nvim'
 alias my_declare-get-definition='declare -f' # get definition of function
 alias lsblk='lsblk -o name,label,size,type,mountpoint,fstype'
 alias gpg2='gpg'

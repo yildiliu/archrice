@@ -18,13 +18,13 @@ cat /etc/resolv.conf
 
 }
 
-function my_make-resolv-immutable() {
+function my_chattr-make-resolv-immutable() {
 
 sudo chattr +i /etc/resolv.conf
 
 }
 
-function my_make-reslv-mutable() {
+function my_chattr-make-resolv-mutable() {
 
 sudo chattr -i /etc/resolv.conf
 
