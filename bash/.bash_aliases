@@ -25,9 +25,6 @@ alias my_gt5-show-diff='gt5 --with-mounts /'
 alias my_pacman-packages-to-be-updated="pacman -Qu"
 alias my_pacman-installed-packages="pacman -Qe"
 
-alias my_tmux-attach="tmux attach-session -t"
-alias my_tmux-kill-session="tmux kill-session -t"
-
 alias my_mount-ntfs="sudo mount -t ntfs-3g -o uid=1000,gid=985,dmask=022,fmask=133"
 
 alias my_ssh-start-agent='eval "$(ssh-agent -s)"'

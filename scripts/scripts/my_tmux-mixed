@@ -1,0 +1,5 @@
+#!/bin/bash
+
+alias my_tmux-new-session-with-following-name="tmux new -s"
+alias my_tmux-attach-to-session="tmux attach-session -t"
+alias my_tmux-kill-session="tmux kill-session -t"
