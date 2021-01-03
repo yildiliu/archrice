@@ -25,5 +25,17 @@ sudo iw dev $1 set power_save off
 
 }
 
-
 alias my_youtubedl-download-mp3="youtube-dl --extract-audio --audio-format mp3"
+
+
+function my_find-show-broken-links() {
+
+find -xtype l -exec ls -l {} \;
+
+}
+
+function my_find-remove-broken-links() {
+
+find . -xtype l -delete
+
+}
