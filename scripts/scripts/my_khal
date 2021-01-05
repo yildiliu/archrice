@@ -1,0 +1,15 @@
+#!/bin/bash
+
+alias my_khal-new-i="khal new -i"
+alias my_khal-list-current-day="khal list"
+alias my_khal-print-calendar-with-agenda="khal calendar"
+alias my_khal-add-to-default-calendar="khal new" # the default calendar was defined in the config
+alias my_khal-edit-past="khal edit --show-past"
+
+
+# adds a new event on 25th of October lasting from 18:00 to 24:00 with an additional description
+# khal new 25.10. 18:00 24:00 Another Event :: with Alice and Bob
+
+# adds a new all day event on 26th of July to the calendar work in the meeting category, which recurs every week.
+# khal new -a work 26.07. Great Event -g meeting -r weekly
+

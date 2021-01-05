@@ -6,6 +6,8 @@ source /home/meyya/scripts/my_mtpfs_commands
 source /home/meyya/scripts/my_network
 source /home/meyya/scripts/my_mixed
 source /home/meyya/scripts/my_tmux-mixed
+source /home/meyya/scripts/my_khal
+
 
 function deleterecursive() {
 
