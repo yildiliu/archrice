@@ -8,6 +8,8 @@ Control-j: menu-complete-backward
 
 # bind alt + e
 "\ee":"my_"
+# bind alt + p
+"\ep":"myp_"
 
 
 

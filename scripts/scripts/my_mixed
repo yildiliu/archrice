@@ -1,7 +1,15 @@
 #!/bin/bash
 
-alias my_logs-verify="journalctl --verify"
+alias my_journalctl-verify-logs="journalctl --verify"
 
-alias my_logs-clear="sudo journalctl --vacuum-size=120M"
+alias my_journalctl-clear-logs="sudo journalctl --vacuum-size=120M"
 
-alias my_logs-usage="journalctl --disk-usage"
+alias my_journalctl-disk-usage-logs="journalctl --disk-usage"
+
+
+alias my_upower-list-path-of-avail-devs="upower -e"
+alias my_upower-show-dev-infos="upower -i"
+
+
+
+

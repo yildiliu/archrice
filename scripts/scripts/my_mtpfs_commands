@@ -2,7 +2,7 @@
 
 alias mtpfs_show='simple-mtpfs -l'
 
-function mtpfs_mount() {
+function my_mtpfs-mount() {
 
 Help()
 {
@@ -25,7 +25,7 @@ simple-mtpfs --device $1 $2
 
 }
 
-function mtpfs_umount() {
+function my_mtpfs-umount() {
 
 Help()
 {
@@ -48,7 +48,7 @@ fusermount -u $1
 
 }
 
-function mtpfs_rsync() {
+function my_mtpfs-rsync() {
 
 Help()
 {
@@ -70,5 +70,4 @@ fi
 rsync --verbose --progress --omit-dir-times --no-perms --recursive --inplace $1 $2
 
 }
-
 

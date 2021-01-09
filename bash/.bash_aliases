@@ -39,6 +39,9 @@ alias my_hdparm-spindown-in5sec="sudo hdparm -S 1"
 alias my_dmesg-lean='dmesg -T --color=always | grep -v UFW --color=always'
 alias my_dmesg="dmesg -T"
 
+
+alias info='info --vi-keys'
+
 # git 
 alias my_git-log1="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
 alias my_git-log2="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''        %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all"
@@ -46,4 +49,7 @@ alias my_git-log2="git log --graph --abbrev-commit --decorate --format=format:'%
 # network
 
 alias my_netstat-listen="sudo netstat -ntpul" # view services in a "LISTEN" state.
+
+
+
 

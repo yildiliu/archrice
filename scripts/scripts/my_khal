@@ -2,9 +2,32 @@
 
 alias my_khal-new-i="khal new -i"
 alias my_khal-list-current-day="khal list"
-alias my_khal-print-calendar-with-agenda="khal calendar"
 alias my_khal-add-to-default-calendar="khal new" # the default calendar was defined in the config
 alias my_khal-edit-past="khal edit --show-past"
+alias my_khal-interactive="khal interactive"
+
+
+alias my_khal-show-calendar-with-agenda="khal calendar"
+
+function my_khal-show-next-seven-days() {
+
+local today=$(date --date="today" +%Y-%m-%d)
+local next_week=$(date --date="next week" +%Y-%m-%d)
+
+khal calendar $today $next_week
+}
+
+function my_khal-show-this-week() {
+
+# TODO: current day is monday or sunday
+
+local this_monday=$(date --date="last monday" +%Y-%m-%d)
+local this_sunday=$(date --date="sunday" +%Y-%m-%d)
+
+khal calendar $this_monday $this_sunday
+}
+
+
 
 
 # adds a new event on 25th of October lasting from 18:00 to 24:00 with an additional description

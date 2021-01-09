@@ -45,8 +45,8 @@ red='\[\033[0;31m\]'
 export PS1="${lightblue}\W ${backtodefault}${darkblue}(${backtodefault}${red}\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)${darkblue})${backtodefault} \$ "
 
 ###################### functions ##################################
-source $HOME/scripts/my_publicfunctions
-source $HOME/.scripts/my_privatefunctions
+source $HOME/scripts/my
+source $HOME/.scripts/myp
 ###################### Tab and History  ##################################
 
 # If there are multiple matches for completion, Tab should cycle through them
@@ -75,8 +75,5 @@ bind 'set colored-completion-prefix'
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-
-
 
 
