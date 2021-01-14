@@ -81,6 +81,8 @@ command Srmdcomment :-1read ~/.vim/snippets/comment.rmd
 
 autocmd Filetype rmd map <F5> :w<bar>!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
 
+
+
 " for automatic formatting of paragraphs
 autocmd BufReadPost,BufNewFile *.rmd,*.tex setlocal textwidth=100
 
@@ -120,3 +122,6 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 " To prevent conceal in LaTeX files
 let g:tex_conceal = ''
+
+autocmd Filetype *.md setlocal tabstop=2
+autocmd Filetype *.md setlocal shiftwidth=2

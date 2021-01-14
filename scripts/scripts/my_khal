@@ -7,7 +7,7 @@ alias my_khal-edit-past="khal edit --show-past"
 alias my_khal-interactive="khal interactive"
 
 
-alias my_khal-show-calendar-with-agenda="khal calendar"
+alias my_khal-show-today="khal calendar"
 
 function my_khal-show-next-seven-days() {
 
@@ -19,12 +19,31 @@ khal calendar $today $next_week
 
 function my_khal-show-this-week() {
 
-# TODO: current day is monday or sunday
+# TODO: what happens if current day is monday or sunday?
 
 local this_monday=$(date --date="last monday" +%Y-%m-%d)
 local this_sunday=$(date --date="sunday" +%Y-%m-%d)
 
 khal calendar $this_monday $this_sunday
+}
+
+function my_khal-show-this-month() {
+
+local month_beginning=$(date -d "-0 month -$(($(date +%d)-1)) days" +%Y-%m-%d)
+local month_ending=$(date -d "-$(date +%d) days +1 month" +%Y-%m-%d)
+
+khal calendar $month_beginning $month_ending
+
+}
+
+
+function my_khal-show-next-thirty-days() {
+
+local today=$(date +%Y-%m-%d)
+local plusthirty=$(date --date="+30 days" +%Y-%m-%d)
+
+khal calendar $today $plusthirty
+
 }
 
 

@@ -95,3 +95,15 @@ sudo nmap --stats-every 10s -sT -p- $1
 }
 
 
+function my_curl-get-public-ip-through-web-request() {
+
+curl https://ipinfo.io/ip
+
+}
+
+function my_dig-get-public-ip-through-dns-request() {
+
+dig +short myip.opendns.com @resolver1.opendns.com
+
+}
+

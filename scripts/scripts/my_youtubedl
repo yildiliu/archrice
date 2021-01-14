@@ -1,0 +1,9 @@
+#!/bin/bash
+
+alias my_youtubedl-download-mp3="youtube-dl --extract-audio --audio-format mp3"
+
+function my_youtubedl-download-whole-playlist-as-mp4() {
+
+youtube-dl -i -f mp4 --yes-playlist "$1"
+
+}
