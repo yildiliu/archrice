@@ -82,9 +82,9 @@ sudo ufw enable
 }
 
 
-function my_arpscan-show-devices-lan() {
+function my_arpscan-show-devices-lan-for-interface() {
 
-sudo arp-scan --interface=wlp36s0b1 --localnet
+sudo arp-scan --interface=$1 --localnet
 
 }
 
@@ -107,3 +107,50 @@ dig +short myip.opendns.com @resolver1.opendns.com
 
 }
 
+function my_vnstat-list-all-interfaces() {
+
+vnstat --iflist
+
+}
+
+# Query the network traffic:
+function my_vnstat-query-network-traffic() {
+  
+ vnstat --query
+}
+
+
+# View live network traffic usage
+function my_vnstat-live-network-traffic-usage() {
+
+vnstat --live
+
+}
+
+
+# Output of summary for an interface
+function my_vnstati-output-summary-for-interface() {
+# $1: interface name
+vnstati -s -i $1 -o "$(date +%Y-%m-%dT%H:%M:%S)_vnstati-summary.png"
+}
+
+# Output of hourly stats for an interface
+function my_vnstati-output-hourly-stats-for-interface() {
+# $1: interface name
+vnstati -h -i $1 -o "$(date +%Y-%m-%dT%H:%M:%S)_vnstati-summary.png"
+}
+
+# Monthly statistics
+function my_vnstat-monthly-statistics-for-interface() {
+vnstat -m -i $1
+}
+
+# hourly statistics
+function my_vnstat-monthly-statistics-for-interface() {
+vnstat -h -i $1
+}
+
+# hourly statistics
+function my_vnstat-output-summary-for-interface() {
+vnstat -h -s $1
+}

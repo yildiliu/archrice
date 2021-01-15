@@ -11,5 +11,3 @@ Control-j: menu-complete-backward
 # bind alt + p
 "\ep":"myp_"
 
-
-

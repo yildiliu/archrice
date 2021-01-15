@@ -103,9 +103,15 @@ fuser -mv $1
 }
 
 
+function my_sr() {
+
+my_selector
+
+}
+
+# show all commands and functions whose prefix is 'my_' or 'myp_'
 function my_selector() {
 
-# show all commands and functions whose prefix is my_ or myp_ 
 local choice=$({ compgen -A function; compgen -A command; } | grep '^my_\|^myp_' | sort --unique |fzf)
 
 type $choice
