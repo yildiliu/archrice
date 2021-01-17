@@ -10,4 +10,8 @@ Control-j: menu-complete-backward
 "\ee":"my_"
 # bind alt + p
 "\ep":"myp_"
+# bind alt + s
+"\es":"my_selector"
+
+
 

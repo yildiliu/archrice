@@ -152,5 +152,5 @@ vnstat -h -i $1
 
 # hourly statistics
 function my_vnstat-output-summary-for-interface() {
-vnstat -h -s $1
+vnstat -h -s -i $1
 }

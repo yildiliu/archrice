@@ -115,9 +115,12 @@ function my_selector() {
 local choice=$({ compgen -A function; compgen -A command; } | grep '^my_\|^myp_' | sort --unique |fzf)
 
 type $choice
-echo -n $choice | xclip -selection clipboard
+# save command in tmux buffer
+# TODO: check if user is in tmux session
+echo -n $choice | tmux load-buffer -b buffer-mycommand -
 
 }
+
 
 function my_pandoc-md-to-docx() {
 
@@ -137,3 +140,51 @@ function my_generate-random-string-with-following-length() {
 
 }
 
+function my_grep-find-string-in-files(){
+
+# -r or -R is recursive,
+# -n is line number, and
+# -w stands for match the whole word.
+
+# $1: search only in files with specific extension. Example: py
+# $2: /path/to/somewhere/
+# $3: pattern
+
+grep --include=\*.$1 -rnw "$2" -e "$3"
+
+}
+
+function my_grep-find-string-all-files() {
+
+# -r or -R is recursive,
+# -n is line number, and
+# -w stands for match the whole word.
+# -l (lower-case L) can be added to just give the file name of matching files.
+
+grep -rnw "$1" -e "$2"
+
+}
+
+function my_ack-find-string-in-all-files() {
+
+ack $1
+
+}
+
+function my_realpath-get-path-to-file() {
+
+realpath $1
+
+}
+
+function my_readlink-get-path-to-file() {
+
+readlink -f $1
+
+}
+
+function my_pdfarranger-arrange-document() {
+
+pdfarranger
+
+}

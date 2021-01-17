@@ -8,9 +8,24 @@ alias my_ta="tmux attach-session -t"
 alias my_tam="tmux attach-session -t main"
 
 
-
-
 alias my_tmux-kill-session="tmux kill-session -t"
 
-
 alias my_tl="tmux ls"
+
+function my_tmux-list-buffers() {
+
+tmux list-buffers
+
+}
+
+function my_tmux-paste-buffer-mycommand() {
+
+tmux paste-buffer -b buffer-mycommand
+
+}
+
+function my_tpbmc() {
+
+my_tmux-paste-buffer-mycommand
+
+}

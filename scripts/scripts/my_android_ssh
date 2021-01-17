@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function phonebindportssh() {
+function my_phonebindportssh() {
 
 Help()
 {
@@ -27,74 +27,3 @@ fi
 adb forward tcp:8022 tcp:8022 
 }
 
-function phonessh() {
-Help()
-{
-cat << EOF
-Name
-
-	phonessh - connect to Android device
-EOF
-}
-
-
-if [ "$1" == "-h" ]; then
-  Help
-  return 0
-fi
-ssh myphone
-}
-
-function phonepullrsync() {
-Help()
-{
-cat << EOF
-Name
-
-	phonepullrsync - as the name indicates
-Syntax
-	phonepullrsync	<locationonphone> <destinationonlaptop>
-
-EOF
-}
-
-
-if [ "$1" == "-h" ]; then
-  Help
-  return 0
-fi
-# -r recursive
-# -v verbose
-rsync --progress -rv myphone:$1 $2
-}
-
-function phonepushrsync() {
-Help()
-{
-cat << EOF
-Name
-
-	phonepushrsync - as the name indicates
-Syntax
-	phonepushrsync <locationonlaptop> <destinationonphone> 
-
-EOF
-}
-
-
-if [ "$1" == "-h" ]; then
-  Help
-  return 0
-fi
-rsync --progress -r $1 myphone:$2
-}
-
-
-function phonepullscp() {
-scp -r myphone:$1 $2
-}
-
-
-function phonepushscp() {
-scp -r $1 myphone:$2
-}
