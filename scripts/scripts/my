@@ -10,7 +10,7 @@ source $HOME/scripts/my_khal
 source $HOME/scripts/my_youtubedl
 
 
-function deleterecursive() {
+function my_find-delete-recursively() {
 
 find . -name "*.$1" -type f
 
@@ -112,12 +112,25 @@ my_selector
 # show all commands and functions whose prefix is 'my_' or 'myp_'
 function my_selector() {
 
-local choice=$({ compgen -A function; compgen -A command; } | grep '^my_\|^myp_' | sort --unique |fzf)
+local choice=$( cat $HOME/.my_custom-functions |fzf)
 
 type $choice
 # save command in tmux buffer
 # TODO: check if user is in tmux session
 echo -n $choice | tmux load-buffer -b buffer-mycommand -
+
+}
+
+function my_get-custom-functions(){
+
+local choice=$({ compgen -A function; compgen -A command; } | grep '^my_\|^myp_' | sort --unique )
+echo "$choice"
+
+}
+
+function my_update-custom-functions() {
+
+my_get-custom-functions > $HOME/.my_custom-functions
 
 }
 
@@ -188,3 +201,29 @@ function my_pdfarranger-arrange-document() {
 pdfarranger
 
 }
+
+function my_ncdu-show-used-space-for-each-directory() {
+
+ncdu
+
+}
+
+function my_du-show-used-space-for-each-directory() {
+
+sudo du -sh *
+
+}
+
+function my_df-show-disk-usage-for-all-disks() {
+
+df -h
+
+}
+
+function my_df-show-disk-usage-for-specific-partition() {
+
+# $1: the name of the folder to which the partition was mounted
+df -h $1
+
+}
+
