@@ -227,3 +227,18 @@ df -h $1
 
 }
 
+function my_light-set-light() {
+
+echo "Current brightness: $(light -G)"
+echo -n "New value: "
+read REPLY
+light -S $REPLY
+
+}
+
+ 
+# generate tags file in .git folder
+function my_ctags-index-current-directory() {
+ctags -R .
+}
+

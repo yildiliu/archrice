@@ -1,6 +1,11 @@
-#!/usr/bin/env sh
+#!/bin/bash
+
+function my_light-set-brightness() {
 
 echo "Current brightness: $(light -G)"
 echo -n "New value: "
 read REPLY
 light -S $REPLY
+
+}
+

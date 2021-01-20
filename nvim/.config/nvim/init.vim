@@ -1,25 +1,7 @@
 let mapleader='<space>'
 set background=dark
-call plug#begin('~/.vim/plugged')
 
-"for i3 syntax highlighting
-Plug 'PotatoesMaster/i3-vim-syntax'
-Plug 'ervandew/supertab'
-Plug 'vim-latex/vim-latex'
-" for syntax highlighting in several languages
-Plug 'sheerun/vim-polyglot'
-" intellisense engine  
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'jamessan/vim-gnupg'
-Plug 'vim-pandoc/vim-rmarkdown'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'preservim/nerdtree'
-Plug 'thaerkh/vim-indentguides'
-" Plug 'ycm-core/YouCompleteMe'
-
-call plug#end()
+source $HOME/.config/nvim/vim-plug/plugins.vim
 
 "enable autocompletion
 set wildmode=longest,list,full
@@ -96,32 +78,6 @@ autocmd Filetype rmd nnoremap <silent> ,c :Srmdcomment<CR>
 
 " Change the colour of the folded line
 highlight Folded ctermbg=black
-
-" for Markdown-compatible tables with table-mode plugin
-let g:table_mode_corner='|'
-
-" update binds when sxhkdrc is updated
-autocmd BufWritePost *sxhkdrc !killall sxhkd; setsid sxhkd &
-
-" vim-pandoc-syntax
-"
-" solves the issue of some words being completly obscured (in my dark-theme
-" terminal)
-let g:pandoc#modules#disabled = ["spell"]
-let g:pandoc#syntax#conceal#use = 0
-let g:pandoc#syntax#codeblocks#embeds#langs = ["bash=sh", "c"]
-let g:pandoc#syntax#codeblocks#embeds#use = 1
-
-" foldcolumn with a width of 0
-let g:pandoc#folding#fdc = 0
-
-" Toggle auto-indenting for code paste
-set pastetoggle=<F2>
-nmap <C-n> :NERDTreeToggle<CR>
-
-
-" To prevent conceal in LaTeX files
-let g:tex_conceal = ''
 
 autocmd Filetype *.md setlocal tabstop=2
 autocmd Filetype *.md setlocal shiftwidth=2

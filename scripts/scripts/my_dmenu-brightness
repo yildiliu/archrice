@@ -1,6 +1,6 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
-# script for changing light in dmenu
+# changing brightness in dmenu
 
 choice=$(echo | dmenu -p "Current brightness: $(light -G)") # show current brightness
 light -S $choice # use input as parameter
