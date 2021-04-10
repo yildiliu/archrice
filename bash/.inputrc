@@ -12,6 +12,8 @@ Control-j: menu-complete-backward
 "\ep":"myp_"
 # bind alt + s
 "\es":"my_selector"
+# bind alt + g
+"\eg":"git"
 
 
 

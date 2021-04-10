@@ -7,3 +7,29 @@ function my_youtubedl-download-whole-playlist-as-mp4() {
 youtube-dl -i -f mp4 --yes-playlist "$1"
 
 }
+
+
+function my_youtubedl-produce-json-with-infos-about-url() {
+
+youtube-dl -j --flat-playlist --skip-download "$1"
+
+}
+
+function my_youtubedl-download-with-bestaudio-quality() {
+
+youtube-dl -f bestaudio "$1"
+
+}
+
+function my_youtubedl-extract-audio() {
+
+youtube-dl --extract-audio $1
+
+}
+
+
+function my_youtubedl-json-extract-only-urls() {
+
+jq -r '.id' | sed 's_^_https://youtu.be/_';
+
+}

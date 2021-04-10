@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # verbundene Bildschirme finden
-screen=$(xrandr | grep -w "connected" | grep -v "primary" | awk '{print $1}' | dmenu -i -fn "System San Francisco Display")
+screen=$(xrandr | grep -w "connected" | awk '{print $1}' | dmenu -i -fn "System San Francisco Display")
 #echo $screen
 
 #wurde dmenu abgebrochen

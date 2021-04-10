@@ -8,43 +8,46 @@ source $HOME/scripts/my_mixed
 source $HOME/scripts/my_tmux-mixed
 source $HOME/scripts/my_khal
 source $HOME/scripts/my_youtubedl
+source $HOME/scripts/my_gpg
+source $HOME/scripts/my_bulk-rename
+source $HOME/scripts/my_cryptsetup
 
 
 function my_find-delete-recursively() {
 
-find . -name "*.$1" -type f
+	find . -name "*.$1" -type f
 
-read -p "Are you sure? " -n 1 -r
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
-				echo 
-				echo "find . -name "*.$1" -type f -delete"
-fi
+	read -p "Are you sure? " -n 1 -r
+	if [[ $REPLY =~ ^[Yy]$ ]]
+	then
+		echo 
+		echo "find . -name "*.$1" -type f -delete"
+	fi
 }
 
 function my_iw-disable-powersave-option-of-interface() {
 
-sudo iw dev $1 set power_save off
+	sudo iw dev $1 set power_save off
 
 }
 
 
 function my_find-show-broken-links() {
 
-find -xtype l -exec ls -l {} \;
+	find -xtype l -exec ls -l {} \;
 
 }
 
 function my_find-remove-broken-links() {
 
-find . -xtype l -delete
+	find . -xtype l -delete
 
 }
 
 
 function my_smartctl-get-total-usage-of-disk() {
 
-sudo smartctl -a $1 | grep Power
+	sudo smartctl -a $1 | grep Power
 
 }
 
@@ -53,6 +56,12 @@ sudo smartctl -a $1 | grep Power
 my_date-get-week-number() {
 
 date --date="$1" +"%V"
+
+}
+
+my_date-get-year-month() {
+
+date --date="$1" +"%G-%m"
 
 }
 
@@ -70,7 +79,7 @@ fuse-zip -r $1 $2
 
 function my_fusermount-unmount() {
 
-fusermount -u $1
+	fusermount -u $1
 
 }
 
@@ -105,51 +114,52 @@ fuser -mv $1
 
 function my_sr() {
 
-my_selector
+	my_selector
+
 
 }
 
 # show all commands and functions whose prefix is 'my_' or 'myp_'
 function my_selector() {
 
-local choice=$( cat $HOME/.my_custom-functions |fzf)
+	local choice=$( cat $HOME/.my_custom-functions |fzf)
 
-type $choice
-# save command in tmux buffer
-# TODO: check if user is in tmux session
-echo -n $choice | tmux load-buffer -b buffer-mycommand -
+	type $choice
+	# save command in tmux buffer
+	# TODO: check if user is in tmux session
+	echo -n $choice | tmux load-buffer -b buffer-mycommand -
 
 }
 
 function my_get-custom-functions(){
 
-local choice=$({ compgen -A function; compgen -A command; } | grep '^my_\|^myp_' | sort --unique )
-echo "$choice"
+	local choice=$({ compgen -A function; compgen -A command; } | grep '^my_\|^myp_' | sort --unique )
+	echo "$choice"
 
 }
 
 function my_update-custom-functions() {
 
-my_get-custom-functions > $HOME/.my_custom-functions
+	my_get-custom-functions > $HOME/.my_custom-functions
 
 }
 
 
 function my_pandoc-md-to-docx() {
 
-pandoc -o $1.docx -f markdown -t docx $1.md
+	pandoc -o $1.docx -f markdown -t docx $1.md
 
 }
 
 function my_pandoc-md-to-pdf() {
 
-pandoc -o $1.pdf -f markdown -t pdf $1.md
+	pandoc -o $1.pdf -f markdown -t pdf $1.md
 
 }
 
 function my_generate-random-string-with-following-length() {
 
-< /dev/urandom tr -dc A-Za-z0-9_ | head -c$1
+	< /dev/urandom tr -dc A-Za-z0-9_ | head -c$1
 
 }
 
@@ -180,43 +190,43 @@ grep -rnw "$1" -e "$2"
 
 function my_ack-find-string-in-all-files() {
 
-ack $1
+	ack $1
 
 }
 
 function my_realpath-get-path-to-file() {
 
-realpath $1
+	realpath $1
 
 }
 
 function my_readlink-get-path-to-file() {
 
-readlink -f $1
+	readlink -f $1
 
 }
 
 function my_pdfarranger-arrange-document() {
 
-pdfarranger
+	pdfarranger
 
 }
 
 function my_ncdu-show-used-space-for-each-directory() {
 
-ncdu
+	ncdu
 
 }
 
 function my_du-show-used-space-for-each-directory() {
 
-sudo du -sh *
+	sudo du -sh *
 
 }
 
 function my_df-show-disk-usage-for-all-disks() {
 
-df -h
+	df -h
 
 }
 
@@ -229,16 +239,126 @@ df -h $1
 
 function my_light-set-light() {
 
-echo "Current brightness: $(light -G)"
-echo -n "New value: "
-read REPLY
-light -S $REPLY
+	echo "Current brightness: $(light -G)"
+	echo -n "New value: "
+	read REPLY
+	light -S $REPLY
 
 }
 
- 
+
 # generate tags file in .git folder
 function my_ctags-index-current-directory() {
-ctags -R .
+	ctags -R .
 }
+
+
+function my_git-show-staged-changes() {
+
+	git diff --staged
+
+}
+
+function my_git-show-unstaged-changes() {
+
+	git diff
+
+}
+
+function my_tar-extract-tar-gz() {
+
+# -z : Work on gzip compression automatically when reading archives.
+# -x : Extract tar.gz archive.
+# -v : Produce verbose output i.e. display progress and extracted file list on screen.
+# -f : Read the archive from the archive to the specified file. 
+
+tar -zxvf $1
+
+}
+
+# go directory up n times
+function cd..() {
+
+	count=1
+
+# if variable is set
+if [ -n "$1" ]
+then
+	count=$1;
+fi
+
+for run in $(seq $count); do
+	cd ..
+done
+
+}
+
+function my_hpscan-color() {
+
+hp-scan -m color
+
+}
+
+function my_systemctl-mask-unit() {
+
+# Mask a unit to make it impossible to start (both manually and as a dependency)
+# $1: name of the unit
+
+systemctl mask $1
+
+}
+
+function my_flameshot-make-screen-shot-in-x-ms() {
+
+# $1: delay in ms
+
+flameshot gui -p $(pwd) -d $1
+
+}
+
+function my_flameshot-make-screenshot-and-change-filename() {
+
+
+	flameshot gui -r > $(ls | wc -c).png
+
+}
+
+function my_flameshot-make-screenshot() {
+
+	flameshot gui -p $(pwd)
+
+}
+
+function my_flameshot-make-screenshot-every-second() {
+
+	for i in {1..20}; do  
+		sleep 2; 
+		my_flameshot-make-screenshot; 
+		wait; 
+	done
+
+}
+
+function my_generate-list-of-dates() {
+
+# $1: from example: 2020-01-01
+# $2: until
+
+d="$1"
+until [[ $d > $2 ]]; do 
+    echo "$d"
+    d=$(date -I -d "$d + 1 day")
+done
+
+
+}
+
+
+function my_dmenu-update-entries() {
+
+dmenu_path;
+
+}
+
+
 

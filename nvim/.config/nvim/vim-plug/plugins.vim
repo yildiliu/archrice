@@ -17,6 +17,7 @@ Plug 'preservim/nerdtree'
 Plug 'thaerkh/vim-indentguides'
 "Plug 'ycm-core/YouCompleteMe'
 Plug 'Yilin-Yang/vim-markbar'
+Plug 'junegunn/vim-peekaboo'
 
 call plug#end()
 
@@ -45,8 +46,8 @@ nmap <C-n> :NERDTreeToggle<CR>
 let g:tex_conceal = ''
 
 " width of a vertical split markbar
-let g:markbar_width = 50
+let g:markbar_peekaboo_width = 80
 
 " only display alphabetic marks a-i and A-I
-let g:markbar_marks_to_display = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+" let g:markbar_marks_to_display = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 

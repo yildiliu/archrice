@@ -81,3 +81,16 @@ highlight Folded ctermbg=black
 
 autocmd Filetype *.md setlocal tabstop=2
 autocmd Filetype *.md setlocal shiftwidth=2
+
+
+
+" Easier split navigations
+" We can use different key mappings for easy navigation between splits. So
+" instead of ctrl-w then j, it’s just ctrl-j:
+
+" unmap <C-J>, since another plugin mapped it
+nnoremap <C-J> <NOP> 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>

@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function my_gpg-list-secret-keys() {
+
+gpg --list-secret-keys --keyid-format LONG
+
+}
+
+# Print a list of all of the keys in your public keyring
+function my_gpg-list-public-keys(){
+
+gpg --list-keys
+
+}
+
+# Produces File.gpg an encrypted version of File, which can be decrypted by Recipient
+
+function my_gpg-encrypt-file() {
+
+#$1: the file to be encrypted
+gpg -er $1
+
+}
+
+
+# Decrypt and/or verify File
+
+my_gpg-decrypt-file() {
+
+#$1: InFile 
+#$2: OutFile 
+
+gpg -d $1 > $2 
+
+}
+

@@ -1,0 +1,46 @@
+#!/bin/bash
+
+function my_cryptsetup-remove-mapping() {
+
+# Removes the existing mapping <name> and wipes  the  key
+# from kernel memory.
+
+#1: name of the mapping
+
+sudo cryptsetup luksClose $1
+
+}
+
+function my_cryptsetup-open-luks-device-and-map() {
+
+# Opens  the  LUKS  device <device> and sets up a mapping <name> after
+# successful verification  of  the  supplied passphrase.
+# $1: device
+# $2: mapping name
+
+sudo cryptsetup luksOpen $1 $2
+
+}
+
+function my_cryptsetup-backup-luks-header() {
+
+# $1: /dev/DEVICE
+# $2: backup name
+
+sudo cryptsetup luksHeaderBackup $1 --header-backup-file $2.bin
+}
+
+
+function my_cryptsetup-open-luks-device-and-map-by-uuid() {
+
+
+# Opens  the  LUKS  device <device> and sets up a mapping <name> after
+
+# successful verification  of  the  supplied passphrase.
+# $1: device
+# $2: mapping name
+
+sudo cryptsetup luksOpen /dev/disk/by-uuid/$1 $2
+
+
+}

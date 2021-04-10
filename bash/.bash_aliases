@@ -18,7 +18,6 @@ alias xournal='xournalpp'
 alias ls='ls --color=auto'
 alias i3lock='i3lock -fc 000000'
 alias c='cd'
-alias my_flameshot-make-screenshot='flameshot gui -p $(pwd)'
 alias my_gt5-show-diff='gt5 --with-mounts /'
 
 alias my_pacman-packages-to-be-updated="pacman -Qu"
