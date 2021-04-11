@@ -360,5 +360,11 @@ dmenu_path;
 
 }
 
+function my_lsblk-show-uuids() {
+
+/bin/lsblk -f
+
+}
+
 
 
