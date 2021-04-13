@@ -59,6 +59,15 @@ date --date="$1" +"%V"
 
 }
 
+function my_date-week2date()
+{
+  local year=$1
+  local week=$2
+  local dayofweek=$3
+  date -d "$year-01-01 +$(( $week * 7 + 1 - $(date -d "$year-01-04" +%u ) - 3 )) days -2 days + $dayofweek days" +"%Y-%m-%d"
+}
+
+
 my_date-get-year-month() {
 
 date --date="$1" +"%G-%m"
