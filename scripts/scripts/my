@@ -371,7 +371,14 @@ dmenu_path;
 
 function my_lsblk-show-uuids() {
 
-/bin/lsblk -f
+/bin/lsblk -f;
+
+}
+
+
+function my_proc-get-cpu-info() {
+
+cat /proc/cpuinfo;
 
 }
 

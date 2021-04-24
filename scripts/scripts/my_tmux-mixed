@@ -29,3 +29,33 @@ function my_tpbmc() {
 my_tmux-paste-buffer-mycommand
 
 }
+
+
+function my_tmux-open-nnn-and-split() {
+
+# Set Session Name
+SESSION="main"
+# SESSIONEXISTS=$(tmux list-sessions | grep $SESSION)
+
+# Only create tmux session if it doesn't already exist
+# if [ "$SESSIONEXISTS" = "" ]
+# then
+	# Start New Session with our name
+	tmux new-session -d -s $SESSION
+	tmux split-window -vt $SESSION; 
+	sleep 0.8;
+	tmux send-keys -t $SESSION.1 nnn C-m;
+	tmux send-keys -t $SESSION.1 '\;';
+	tmux send-keys -t $SESSION.1 'p';
+	sleep 0.1;
+	tmux kill-pane -t $SESSION.0;
+	#sleep 0.7;
+	tmux split-window -vt $SESSION; 
+
+
+# fi
+
+# Attach Session, on the Main window
+tmux attach-session -t $SESSION
+
+}
