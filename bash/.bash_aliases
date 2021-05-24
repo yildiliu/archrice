@@ -1,6 +1,6 @@
 alias l="ls -l"
-alias rm="rm -iv"
 alias my_mount="sudo mount"
+alias rm="rm -iv"
 alias my_umount="sudo umount"
 alias my_udisk-power-off="udisksctl power-off -b"
 alias my_bash-reload=". $HOME/.bash_profile"
@@ -19,6 +19,7 @@ alias ls='ls --color=auto'
 alias i3lock='i3lock -fc 000000'
 alias c='cd'
 alias my_gt5-show-diff='gt5 --with-mounts /'
+alias cal='cal -m'
 
 alias my_pacman-packages-to-be-updated="pacman -Qu"
 alias my_pacman-installed-packages="pacman -Qe"
@@ -47,6 +48,7 @@ alias my_git-log2="git log --graph --abbrev-commit --decorate --format=format:'%
 # network
 
 alias my_netstat-listen="sudo netstat -ntpul" # view services in a "LISTEN" state.
+alias ee="exit"
 
 
 

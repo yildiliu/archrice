@@ -52,10 +52,11 @@ SESSION="main"
 	#sleep 0.7;
 	tmux split-window -vt $SESSION; 
 
-
 # fi
 
 # Attach Session, on the Main window
 tmux attach-session -t $SESSION
 
 }
+
+

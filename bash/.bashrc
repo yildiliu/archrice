@@ -9,10 +9,6 @@ PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
 
 HISTSIZE=1000
 
-# plug in keys for nnn
-export NNN_PLUG='p:preview-tui;c:cwd'
-# path of a named pipe to write the hovered file path
-export NNN_FIFO='/tmp/nnn.fifo'
 
 
 
@@ -69,6 +65,15 @@ bind '"\e[B":history-search-forward'
 
 bind 'set completion-display-width 0'
 bind 'set colored-completion-prefix'
+
+
+### nnn
+
+
+# plug in keys for nnn
+export NNN_PLUG='p:preview-tui;c:cwd'
+# path of a named pipe to write the hovered file path
+export NNN_FIFO='/tmp/nnn.fifo'
 
 ###################### Aliases  ##################################
 

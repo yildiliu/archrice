@@ -382,5 +382,10 @@ cat /proc/cpuinfo;
 
 }
 
+function my_cd() {
 
+local choice=$(compgen -A variable | grep path_ | fzf)
+cd $choice
+
+}
 
