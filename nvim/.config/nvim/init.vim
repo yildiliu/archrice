@@ -79,8 +79,8 @@ autocmd Filetype rmd nnoremap <silent> ,c :Srmdcomment<CR>
 " Change the colour of the folded line
 highlight Folded ctermbg=black
 
-autocmd Filetype *.md setlocal tabstop=2
-autocmd Filetype *.md setlocal shiftwidth=2
+autocmd Filetype md setlocal tabstop=2
+autocmd Filetype md setlocal shiftwidth=2
 
 
 
@@ -94,3 +94,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+
+" kalender
+autocmd BufNewFile,BufRead *.adoc :source $HOME/.config/nvim/kalendus-maximus.vim
+
+
+
