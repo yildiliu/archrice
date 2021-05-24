@@ -12,6 +12,23 @@ source $HOME/scripts/my_gpg
 source $HOME/scripts/my_bulk-rename
 source $HOME/scripts/my_cryptsetup
 
+function my_set-dates() {
+
+day_number=$(date +%d);
+week_beginning=$(date -dmonday +%d);
+week_end=$(date -dsunday +%d);
+
+# if sunday is in the next month
+if [ $week_end -lt $week_beginning ]
+then
+	month_number=$(date --date='+10 days' +%m);
+else 
+	month_number=$(date +%m);
+fi
+
+}
+
+my_set-dates
 
 function my_find-delete-recursively() {
 
