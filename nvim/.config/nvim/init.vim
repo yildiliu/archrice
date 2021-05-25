@@ -9,9 +9,9 @@ set wildmode=longest,list,full
 set number
 
 " save
-nnoremap <space>w :w<CR>
+"nnoremap <space>w :w<CR>
 " exit
-nnoremap <space>q :q<CR>
+nnoremap <space>wq :wq<CR>
 
 syntax on
 set ruler

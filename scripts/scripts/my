@@ -15,8 +15,16 @@ source $HOME/scripts/my_cryptsetup
 function my_set-dates() {
 
 day_number=$(date +%d);
-week_beginning=$(date -dmonday +%d);
+
 week_end=$(date -dsunday +%d);
+
+if [ $(date +%a) == 'Mon' ]
+then
+	week_beginning=$(date -dmonday +%d);
+else
+	week_beginning=$(date -dlast-monday +%d);
+fi 
+
 
 # if sunday is in the next month
 if [ $week_end -lt $week_beginning ]
